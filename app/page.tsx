@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { buildGym } from '../utils/builder';
 
-// LOGO COMPONENT
+// LOGO COMPONENT: Integrated for a professional look
 function Logo() {
   return (
     <div className="flex items-center justify-center gap-3 mb-2">
@@ -68,6 +68,7 @@ export default function Home() {
                              radial-gradient(at 100% 0%, hsla(210,100%,93%,1) 0, transparent 50%)`
          }}>
       
+      {/* HEADER SECTION */}
       <header className="backdrop-blur-md bg-blue-900/90 text-white p-8 shadow-2xl sticky top-0 z-50">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           <Logo />
@@ -80,8 +81,8 @@ export default function Home() {
 
       <main className="max-w-4xl mx-auto p-6 mt-8">
         
+        {/* INPUT CARD */}
         <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border border-white mb-10 transition-all hover:shadow-2xl">
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
               <label className="block font-bold text-sm uppercase tracking-widest text-gray-500 mb-3">Ceiling Height</label>
@@ -150,6 +151,7 @@ export default function Home() {
           </button>
         </div>
 
+        {/* RESULTS SECTION */}
         {results && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="flex p-1 bg-gray-200/50 backdrop-blur-md rounded-2xl mb-8 max-w-md mx-auto">
@@ -168,7 +170,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="bg-white/90 backdrop-blur-md rounded-[2.5rem] shadow-2xl overflow-hidden border border-white">
+            <div className="bg-white/90 backdrop-blur-md rounded-[2.5rem] shadow-2xl overflow-hidden border border-white mb-20">
               <div className={`p-8 text-center text-white bg-gradient-to-br ${
                 activeTier === 'premium' ? 'from-gray-800 to-black' : activeTier === 'value' ? 'from-blue-600 to-blue-900' : 'from-emerald-500 to-emerald-700'
               }`}>
@@ -181,15 +183,68 @@ export default function Home() {
                   <ResultItem key={index} item={item} />
                 ))}
               </div>
-              
-              <div className="p-8 pt-0">
-                <button className="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-xl hover:bg-blue-700 transition shadow-xl uppercase italic">
-                  Checkout All Equipment
-                </button>
-              </div>
             </div>
           </div>
         )}
+
+        {/* ABOUT & CONTACT SECTION: Optimized for Impact.com approval */}
+        <section className="mt-20 border-t border-blue-100 pt-20">
+          <div className="bg-white/70 backdrop-blur-md rounded-[2.5rem] p-10 shadow-xl border border-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              
+              {/* ABOUT US */}
+              <div>
+                <h2 className="text-3xl font-black tracking-tighter uppercase italic mb-6 text-blue-900">
+                  The Architect
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Gym Fit My Space was founded by <strong>Jacob Perez</strong>, a developer and fitness enthusiast 
+                  who believes that space constraints shouldn't limit your strength potential.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Currently navigating a <strong>7-week transformation goal</strong>, Jacob built this tool 
+                  to bridge the gap between complex space engineering and elite home gym equipment. 
+                  Whether you're a Powerlifter needing precision iron or a CrossFitter needing durable bumpers, 
+                  we engineer the build so you can focus on the lift.
+                </p>
+              </div>
+
+              {/* CONTACT US */}
+              <div className="bg-blue-900 rounded-3xl p-8 text-white shadow-inner">
+                <h2 className="text-2xl font-black uppercase tracking-widest mb-4">Get In Touch</h2>
+                <p className="text-blue-200 mb-8 font-medium">
+                  Have questions about a specific build or interested in a partnership? 
+                  Reach out directly to our lead architect.
+                </p>
+                
+                <div className="space-y-4">
+                  <a 
+                    href="mailto:jacobperez@gymfitmyspace.com" 
+                    className="flex items-center gap-4 bg-white/10 p-4 rounded-2xl hover:bg-white/20 transition group"
+                  >
+                    <div className="bg-blue-500 p-2 rounded-lg group-hover:scale-110 transition">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                      </svg>
+                    </div>
+                    <span className="font-bold tracking-tight">jacobperez@gymfitmyspace.com</span>
+                  </a>
+                  
+                  <div className="flex items-center gap-4 bg-white/10 p-4 rounded-2xl">
+                    <div className="bg-emerald-500 p-2 rounded-lg">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                      </svg>
+                    </div>
+                    <span className="font-bold tracking-tight">East Bay, CA & Putnam Lake, NY</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
@@ -201,7 +256,6 @@ function ResultItem({ item }) {
       <div className="w-full md:w-32 h-32 flex-shrink-0 bg-white rounded-2xl overflow-hidden shadow-inner mb-6 md:mb-0 md:mr-8 border border-gray-100">
         <img src={item.image} alt={item.name} className="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500" />
       </div>
-
       <div className="flex-grow text-center md:text-left">
         <div className="flex flex-col md:flex-row md:items-center gap-2 mb-1">
            <span className="text-[10px] font-black bg-blue-100 text-blue-600 px-2 py-1 rounded-md uppercase tracking-wider w-fit mx-auto md:mx-0">
@@ -211,7 +265,6 @@ function ResultItem({ item }) {
         </div>
         <h3 className="text-xl font-bold text-gray-900 leading-tight">{item.name}</h3>
       </div>
-
       <div className="text-center md:text-right mt-6 md:mt-0 md:ml-8 min-w-[140px]">
         <div className="text-2xl font-black text-gray-900 mb-3 tracking-tighter">${item.price}</div>
         <a 
