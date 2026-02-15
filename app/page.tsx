@@ -38,12 +38,17 @@ export default function Home() {
          }}>
       
       {/* HEADER: Transparent glass effect */}
-      <header className="backdrop-blur-md bg-blue-900/90 text-white p-8 shadow-2xl sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-black tracking-tighter uppercase italic">FitMySpace</h1>
-          <p className="text-blue-200 mt-2 font-medium tracking-wide">Premium Home Gym Architect</p>
-        </div>
-      </header>
+      // app/page.tsx
+<header className="backdrop-blur-md bg-blue-900/90 text-white p-8 shadow-2xl sticky top-0 z-50">
+  <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+    <Logo />
+    {/* Change this line */}
+    <h1 className="text-4xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
+      Gym Fit My Space
+    </h1>
+    <p className="text-blue-200 mt-2 font-medium tracking-wide">Premium Home Gym Architect</p>
+  </div>
+</header>
 
       <main className="max-w-4xl mx-auto p-6 mt-8">
         

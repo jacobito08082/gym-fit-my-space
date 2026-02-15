@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 // @ts-nocheck
+// app/layout.tsx
 export const metadata = {
-  title: "FitMySpace | Home Gym Configurator",
-  description: "Engineer your perfect home gym based on your space and style.",
+  title: "Gym Fit My Space | Home Gym Configurator",
+  description: "Engineer your perfect home gym with Gym Fit My Space.",
   verification: {
     other: {
       'impact-site-verification': '26432e1a-7330-45e4-8ef6-2d0551970e98',
