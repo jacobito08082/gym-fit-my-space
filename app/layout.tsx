@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Gym Fit My Space | Home Gym Configurator",
   description: "Engineer your perfect home gym with Gym Fit My Space. Built for lifters, by lifters.",
-  // Impact.com Verification
+  // Impact.com NEW Verification
   verification: {
     other: {
-      'impact-site-verification': '26432e1a-7330-45e4-8ef6-2d0551970e98',
+      'impact-site-verification': '99691139-b87b-4337-9f96-3ed970338ef6',
     },
   },
 };
@@ -27,13 +27,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Secondary manual verification for Impact.com */}
-        <meta name="impact-site-verification" value="26432e1a-7330-45e4-8ef6-2d0551970e98" />
+        {/* Manual verification tag for Impact.com */}
+        <meta name="impact-site-verification" value="99691139-b87b-4337-9f96-3ed970338ef6" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         
-        {/* FOOTER: Professional touches for Impact.com approval */}
+        {/* FOOTER: Professional touches for Brand approval */}
         <footer className="mt-20 py-10 border-t border-gray-200 bg-white/50 backdrop-blur-sm text-center">
           <div className="max-w-4xl mx-auto px-6">
             <p className="text-sm font-bold text-gray-900 mb-2">© 2026 Gym Fit My Space</p>
