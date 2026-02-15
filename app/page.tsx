@@ -3,6 +3,38 @@
 import { useState } from 'react';
 import { buildGym } from '../utils/builder';
 
+// LOGO COMPONENT
+function Logo() {
+  return (
+    <div className="flex items-center justify-center gap-3 mb-2">
+      <svg 
+        width="50" 
+        height="50" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-blue-400 drop-shadow-lg"
+      >
+        <path 
+          d="M3 10L12 3L21 10V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V10Z" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        />
+        <path 
+          d="M7 14H17" 
+          stroke="currentColor" 
+          strokeWidth="2.5" 
+          strokeLinecap="round"
+        />
+        <path d="M6 12V16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M18 12V16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      </svg>
+    </div>
+  );
+}
+
 export default function Home() {
   const [ceiling, setCeiling] = useState(96);
   const [liftStyle, setLiftStyle] = useState("general");
@@ -29,7 +61,6 @@ export default function Home() {
   };
 
   return (
-    // MODERN BACKGROUND: Animated gradient mesh effect
     <div className="min-h-screen font-sans text-gray-900 pb-20 bg-fixed bg-slate-50" 
          style={{
            backgroundImage: `radial-gradient(at 0% 0%, hsla(210,100%,93%,1) 0, transparent 50%), 
@@ -37,22 +68,18 @@ export default function Home() {
                              radial-gradient(at 100% 0%, hsla(210,100%,93%,1) 0, transparent 50%)`
          }}>
       
-      {/* HEADER: Transparent glass effect */}
-      // app/page.tsx
-<header className="backdrop-blur-md bg-blue-900/90 text-white p-8 shadow-2xl sticky top-0 z-50">
-  <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-    <Logo />
-    {/* Change this line */}
-    <h1 className="text-4xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
-      Gym Fit My Space
-    </h1>
-    <p className="text-blue-200 mt-2 font-medium tracking-wide">Premium Home Gym Architect</p>
-  </div>
-</header>
+      <header className="backdrop-blur-md bg-blue-900/90 text-white p-8 shadow-2xl sticky top-0 z-50">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          <Logo />
+          <h1 className="text-4xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
+            Gym Fit My Space
+          </h1>
+          <p className="text-blue-200 mt-2 font-medium tracking-wide">Premium Home Gym Architect</p>
+        </div>
+      </header>
 
       <main className="max-w-4xl mx-auto p-6 mt-8">
         
-        {/* INPUT SECTION: White card with soft glow */}
         <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border border-white mb-10 transition-all hover:shadow-2xl">
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -123,10 +150,8 @@ export default function Home() {
           </button>
         </div>
 
-        {/* RESULTS SECTION */}
         {results && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-            
             <div className="flex p-1 bg-gray-200/50 backdrop-blur-md rounded-2xl mb-8 max-w-md mx-auto">
               {['budget', 'value', 'premium'].map((tier) => (
                 <button
